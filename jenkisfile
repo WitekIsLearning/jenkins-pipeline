@@ -1,26 +1,22 @@
 pipeline {
     agent any
-    }
-    
+
+    stages {
+
         stage("build") {
             steps {
-                echo 'building stage..........'
-                }
+                echo  'build'
             }
         }
         stage("test") {
-            when {
-                echo 'building stage..........'
-            }
+
             steps {
-                script {
-                    gv.testApp()
+                echo 'test'
                 }
             }
-        }
         stage("deploy") {
-             echo 'building stage..........'
-                }
+            steps {
+                echo 'deploy'
             }
         }
     }   
