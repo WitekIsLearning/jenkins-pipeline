@@ -19,11 +19,5 @@ pipeline {
       }
     }
 
-    stage('Docker Build') {
-      steps {
-        sh 'docker build -f node-app/dockerfile . -t wekkwekk/node-app'
-      }
-    }
-
   }
 }
