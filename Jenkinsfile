@@ -16,7 +16,7 @@ pipeline {
     stage('deploy') {
       steps {
         echo 'deploy'
-        sh 'docker build -f jenkins-pipeline/node-app/dockerfile . -t wekkwekk/node-app'
+        sh 'docker build -f node-app/dockerfile . -t wekkwekk/node-app'
       }
     }
 
