@@ -1,23 +1,24 @@
 pipeline {
-    agent any
+  agent any
+  stages {
+    stage('build') {
+      steps {
+        echo 'build'
+      }
+    }
 
-    stages {
+    stage('test') {
+      steps {
+        echo 'test'
+      }
+    }
 
-        stage("build") {
-            steps {
-                echo  'build'
-            }
-        }
-        stage("test") {
+    stage('deploy') {
+      steps {
+        echo 'deploy'
+        sh 'docker build -f node-app/dockerfile . -t wekkwekk/node-app'
+      }
+    }
 
-            steps {
-                echo 'test'
-                }
-            }
-        stage("deploy") {
-            steps {
-                echo 'deploy'
-            }
-        }
-    }   
+  }
 }
